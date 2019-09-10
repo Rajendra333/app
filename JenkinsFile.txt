@@ -1,0 +1,30 @@
+pipeline {
+	agent any
+	stages {
+		stage ('clone') {
+	   Steps{
+                     
+                     git url: https://github.com/Rajendra333/app.git
+		}
+                }
+		stage ('Build') {
+	   Steps{
+                     
+                     bat mvn install
+
+		}
+		
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+}
