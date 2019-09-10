@@ -1,0 +1,11 @@
+node {
+		stage (‘Clone’) {
+			git url: 'https://github.com/Rajendra333/app.git'}
+		
+
+stage('Build') {
+
+          bat "mvn clean"
+}  
+}
+	
