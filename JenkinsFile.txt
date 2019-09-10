@@ -2,13 +2,13 @@ pipeline {
 	agent any
 	stages {
 		stage ('clone') {
-	   Steps{
+	   steps{
                      
-                     git url: https://github.com/Rajendra333/app.git
+                     git url: 'https://github.com/Rajendra333/app.git'
 		}
                 }
 		stage ('Build') {
-	   Steps{
+	   steps{
                      
                      bat mvn install
 
