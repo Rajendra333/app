@@ -1,11 +1,14 @@
-node {
-		stage (‘Clone’) {
-			git url: 'https://github.com/Rajendra333/app.git'}
-		
+node {
 
-stage('Build') {
+   
+   stage('Preparation') { 
+      git 'https://github.com/Rajendra333/app.git'
+  
+   }
+ 
+  stage('Build') {
+ 
 
-          bat "mvn clean"
-}  
+         bat 'clean package'
+      }
 }
-	
