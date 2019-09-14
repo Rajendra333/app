@@ -26,5 +26,10 @@ pipeline {
         bat 'Email(body: \'DevOps\', from: \'rajendrachowdary40@gmail.com\', subject: \'hi\', to: \'rajendradevops3@gmail.com\')'
       }
     }
+    stage('Deploy') {
+      steps {
+        bat 'bat \'del "C:\\\\Program Files\\\\Apache Software Foundation\\\\Tomcat 8.5\\\\webapps\\\\gamutkart.war	 " && xcopy "C:\\\\Program Files (x86)\\\\Jenkins\\\\workspace\\\\madhuapp_master\\\\target\\\\gamutkart.war" "C:\\\\Program Files\\\\Apache Software Foundation\\\\Tomcat 8.5\\\\webapps"\''
+      }
+    }
   }
 }
