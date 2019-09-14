@@ -24,6 +24,7 @@ pipeline {
     stage('Notification') {
       steps {
         bat 'emailext body: \'buils is pass\', subject: \'hii\', to: \'rajendradevops3@gmail.com\''
+        mail(subject: 'test', body: 'application sucess', to: 'rajendrachowdary40@gmail.com')
       }
     }
     stage('Deploy') {
