@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Notification') {
       steps {
-        bat 'Email(body: \'DevOps\', from: \'rajendrachowdary40@gmail.com\', subject: \'hi\', to: \'rajendradevops3@gmail.com\')'
+        bat 'post(body: \'DevOps\', from: \'rajendrachowdary40@gmail.com\', subject: \'hi\', to: \'rajendradevops3@gmail.com\')'
       }
     }
     stage('Deploy') {
