@@ -21,5 +21,10 @@ pipeline {
         bat 'mvn sonar:sonar'
       }
     }
+    stage('Notification') {
+      steps {
+        bat 'mail(body: \'DevOps\', from: \'rajendrachowdary40@gmail.com\', subject: \'hi\', to: \'rajendrachowdary40@gmail.com\')'
+      }
+    }
   }
 }
