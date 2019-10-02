@@ -1,0 +1,39 @@
+node{
+    environment {
+        //This variable need be tested as string
+        doError = '1'
+    }
+    stage('checkout'){
+        url : 'https://github.com/Rajendra333/app.git'
+    }
+    stage('mvn package'){
+        bat 'mvn clean package'
+    }    
+    stage('test'){
+        bat 'mvn test'
+    }
+    stage('sonar'){
+        bat 'mvn sonar:sonar'
+    }
+    stage('mvn deploy'){
+        bat 'mvn deploy'
+    }
+    stage('notification'){
+     stage('Sucess'){
+  		when{
+  			expression { doError == '0'}
+  			
+  			echo "ok"
+  	}
+  }	
+    }
+  	post {
+  		always {
+  			echo 'I will say Hello again'
+
+  			   emailext attachLog: true, body: '''"${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: \'rajendra.r2t@gmail.com\'], [$class: \'rajendrachowdary40@gmail.com\']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"''', compressLog: true, recipientProviders: [developers()], subject: 'build results', to: 'rajendrachowdary40@gmail.com'
+     		}   
+    }
+}
