@@ -24,9 +24,6 @@
 			
 	</dependencies>
 	
-	<build>
-		<finalName>gamutkart</finalName>
-	</build>
 	<distributionManagement>
     <repository>
         <id>central</id>
@@ -39,5 +36,8 @@
         <url>http://localhost:8081/artifactory/gamutkart</url>
     </snapshotRepository>
 </distributionManagement>
+	<build>
+		<finalName>gamutkart</finalName>
+	</build>
 </project>
 
