@@ -23,19 +23,6 @@
 		</dependency>
 			
 	</dependencies>
-	
-	<distributionManagement>
-    <repository>
-        <id>central</id>
-        <name>Sampath-releases</name>
-        <url>http://localhost:8081/artifactory/gamutkart</url>
-    </repository>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>Sampath-snapshots</name>
-        <url>http://localhost:8081/artifactory/gamutkart</url>
-    </snapshotRepository>
-</distributionManagement>
 	<build>
 		<finalName>gamutkart</finalName>
 	</build>
