@@ -22,9 +22,9 @@ pipeline {
       }
     }
     
-    stage('Deploy') {
+    stage('deploy') {
       steps {
-        bat ' \'del "C:\\\\Program Files\\\\Apache Software Foundation\\\\Tomcat 8.5\\\\webapps\\\\gamutkart.war	 " && xcopy "C:\\\\Program Files (x86)\\\\Jenkins\\\\workspace\\\\app_master@script\\\\target\\\\gamutkart.war" "C:\\\\Program Files\\\\Apache Software Foundation\\\\Tomcat 8.5\\\\webapps"\''
+        bat 'del "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps\\gamutkart.war	 " && xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\app_master@script\\target\\gamutkart.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps"'
       }
     }
   }
